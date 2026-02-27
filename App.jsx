@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // ─── RISK MODEL DATA ─────────────────────────────────────────────────────────
 
@@ -251,7 +252,7 @@ const styles = `
 
 // ─── LAYOUT ───────────────────────────────────────────────────────────────────
 
-function Header({ page, setPage }) {
+function Header({ page: _page, setPage }) {
   return (
     <header style={{
       position: "sticky", top: 0, zIndex: 50,
@@ -597,7 +598,7 @@ function MailingListSection() {
             </div>
           ) : (
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, color: "#16a34a", fontWeight: 600 }}>
-              <Ico name="checkCircle" size={20} color="#16a34a" /> You're subscribed!
+              <Ico name="checkCircle" size={20} color="#16a34a" /> You&apos;re subscribed!
             </div>
           )}
         </div>
@@ -993,6 +994,7 @@ export default function App() {
         </div>
         <Footer setPage={navigate} />
       </div>
+      <SpeedInsights />
     </>
   );
 }
